@@ -1,7 +1,26 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { FaHome, FaHandshake, FaQuestionCircle, FaPaw } from 'react-icons/fa';
 import '../App.css';
+
+const Navigation = () => {
+  return (
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} to="/">PetPal</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/about">About Us</Nav.Link>
+            <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
 
 const Home = () => {
   const pets = [
@@ -12,6 +31,8 @@ const Home = () => {
 
   return (
     <>
+      <Navigation />
+
       {/* Hero Section */}
       <section className="hero-section">
         {/* Floating paw prints */}
@@ -88,7 +109,7 @@ const Home = () => {
       </Container>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="footer text-center py-3">
         &copy; {new Date().getFullYear()} PetPal. All rights reserved.
       </footer>
     </>

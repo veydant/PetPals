@@ -12,7 +12,9 @@ import AdminDashboard from './pages/AdminDashboard';
 import AdoptPet from './pages/AdoptPet';
 import MyAdoptionRequests from './pages/MyAdoptionRequests';
 import './App.css'
-
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Navigation from './pages/Navigation';
 const App = () => {
   return (
     <AuthProvider>
@@ -21,6 +23,8 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} /> 
           <Route path="/add-pet-listing" element={<AddPetListing />} />
           <Route path="/my-pet-listings" element={<MyPetListings />} />
           <Route path="/admin" element={<AdminDashboard />} />
